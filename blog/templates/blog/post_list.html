@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Bloging webpage</title>
+    <style>
+        body{
+            background-color:black;
+        }
+    
+        header{
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            padding:10px;
+            background-color:#fff;
+            box-shadow:0 2px 5px black;
+            font-weight:bold;
+            font-size:15px;
+            text-align:center;
+        }
+        .account{
+            flex:1;
+            text-align:right;
+        }
+        .account button{
+            background-color:#5538f9;
+            color:white;
+            border: none;
+            padding: 10px 20px;
+            border-radius:5px;
+            cursor:pointer;
+            font-size:18px;
+            font-weight:bold;
+            transition:background-color 0.3s ease;
+        }
+        .footer{
+            display:flex;
+            
+            justify-content:space-between;
+            padding:10px;
+            background-color:#fff;
+            box-shadow:0 2px 5px black;
+            font-weight:bold;
+            font-size:15px;
+            
+            
+          
+        }
+        
+    </style>
+  </head>
+  <body>
+    <header class="header">
+        <div class="logo">
+           
+            <h3 style="color:black; font-size:48px margin-left:20px"> Welcome to My bloging web page</h3>
+        </div>
+        <div class="account">
+            <a href="http://127.0.0.1:8000/admin/blog/post/add/"><button> Add Blog</button></a>
+        </div>
+    </header>
+<div class="container mt-5  ">
+  <div class="row justify-content-center mt-3">
+    <div class="col-md-8 mt-4">
+      {% for post in posts %}
+      <div class="card mb-4 bg-secondary">
+        <div class="card-boby">
+          <h2 class="card-title text-center text-light  fw-bold text-capitalize mt-2">{{ post.title }}</h2>
+          <p class="card-text-muted h6  fw-bold   text-dark  text-center text-capitalize ms-3 me-3">{{ post.content }}</p>
+          <p class="card-text-muted text-end text-dark   fw-bolder me-2 text-capitalize">Published on: {{ post.created_at }}</p>
+       
+        </div>
+        
+       
+      </div>  
+      
+       {% endfor %} 
+    </div>
+    
+
+  </div>
+   
+</div>
+<footer>
+  <div class="footer">
+    <h5 style="margin-left:500px">Create by @ashishsahu81126gmail.com</h5>
+  </div>
+
+</footer>
+
+   
+
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+  </body>
+  
+</html>
+
+
+
+
+    
